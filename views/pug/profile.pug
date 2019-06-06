@@ -1,0 +1,34 @@
+html
+  head
+    meta(name='description', content='Profile')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/public/style.css')
+  body
+    // add your code below, make sure its indented at this level
+    h2#welcome.center Welcome,#{username} ! 
+    p Password Form
+    form(action='/passChange', method='post')
+      div
+        label Password:
+        input#pass(type='password', name='password', onkeyup='check();',value='')
+      div
+        label Confirm Password:
+        input#cpass(type='password', name='confirmpassword', onkeyup='check();')
+        span#message
+      div
+        input(type='submit', value='Submit')
+    p
+    a(href='/logout') logout
+    script.
+      var check = function() {
+      if (document.getElementById('pass').value ==
+      document.getElementById('cpass').value) {
+      document.getElementById('message').style.color = 'green';
+      document.getElementById('message').innerHTML = 'matching';
+      } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'not matching';
+      }
+      }

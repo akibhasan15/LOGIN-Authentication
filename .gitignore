@@ -1,0 +1,7 @@
+/node_modules
+/freeCodeCamp
+/package-lock.json
+/dummy.js
+/views/pug/pmatch.html
+/views/pr.js
+/sendgrid.js
